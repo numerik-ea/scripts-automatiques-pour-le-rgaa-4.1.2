@@ -25,6 +25,6 @@ for chunk in chunks:
         print("--------------------------------")
     except Exception as e:
         print(f"{page_id} | {page_name} | {url}")
-        print(f"{page_id} | ❌ Erreur: {e}")
+        print(f"{page_id} | ❌ Erreur : {e}")
         print("--------------------------------")
     
