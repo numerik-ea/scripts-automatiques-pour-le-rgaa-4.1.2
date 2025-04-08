@@ -14,12 +14,14 @@ for chunk in chunks:
         continue
 
     page_id, page_name, url = chunk
+    
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         html_tag = soup.find('html')
         lang = html_tag.get('lang') if html_tag else '❌ Pas de balise <html>'
+        
         print(f"{page_id} | {page_name} | {url}")
         print(f"{page_id} | 8.3 - html[lang] : {'✅ ' + lang if lang else '❌ Non spécifié'}")
         print("--------------------------------")
